@@ -51,7 +51,7 @@ tello_aruco_landing/
 ## Próximos Pasos (To-Do)
 
 - [✓] Escribir el módulo de corrección de imagen (`image_processor.py`) y probarlo con `test_vision.py`.
+- [✓] Escribir controlador PID.
 - [ ] Escribir logica de la máquina de estados.
-- [ ] Escribir controlador PID.
 - [ ] Escribir modulo de telemetria y registro de logs.
 - [ ] Implementar modulos en el programa principal

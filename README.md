@@ -50,7 +50,5 @@ tello_aruco_landing/
 
 ## Próximos Pasos (To-Do)
 
-- [ ] Configurar entorno virtual e instalar dependencias (`djitellopy`, `opencv-contrib-python`).
-- [ ] Construir y montar el espejo a 45 grados en el dron.
-- [ ] Escribir el módulo de corrección de imagen (`image_processor.py`) y probarlo con `test_vision_only.py`.
+- [ ] Escribir el módulo de corrección de imagen (`image_processor.py`) y probarlo con `test_vision.py`.
 - [ ] Implementar la máquina de estados y el control PID.

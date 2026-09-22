@@ -50,5 +50,5 @@ tello_aruco_landing/
 
 ## Próximos Pasos (To-Do)
 
-- [✓] Escribir el módulo de corrección de imagen (`image_processor.py`) y probarlo con `test_vision.py`.
-- [ ] Implementar la máquina de estados y el control PID.
+[✓] Escribir el módulo de corrección de imagen (`image_processor.py`) y probarlo con `test_vision.py`.
+[ ] Implementar la máquina de estados y el control PID.

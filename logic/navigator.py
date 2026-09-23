@@ -11,8 +11,8 @@ from control.kalman import KalmanPosicion
 class Navigator:
     def __init__(self):
         # Controladores PID para X (Roll) y Y (Pitch)
-        self.pid_x = PIDController(kp=2.0, ki=0.0, kd=0.5, min_out=-50, max_out=50)
-        self.pid_y = PIDController(kp=2.0, ki=0.0, kd=0.5, min_out=-50, max_out=50)
+        self.pid_x = PIDController(kp=1.75, ki=0.0, kd=0.4, min_out=-50, max_out=50)
+        self.pid_y = PIDController(kp=1.9, ki=0.0, kd=0.4, min_out=-50, max_out=50)
         
         # Filtros de Kalman
         self.kalman_x = KalmanPosicion(dt=0.1, std_acc=5.0, std_vision=2.0)
@@ -41,4 +41,4 @@ class Navigator:
         cmd_roll = self.pid_x.update(self.setpoint_x, est_x)
         cmd_pitch = self.pid_y.update(self.setpoint_y, est_y)
         
-        return cmd_roll, cmd_pitch
+        return cmd_roll, -cmd_pitch

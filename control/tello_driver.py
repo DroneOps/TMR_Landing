@@ -10,10 +10,16 @@ class TelloDriver:
         print(f"[HW] Tello Conectado. Batería: {self.drone.get_battery()}%")
         self.drone.streamon()
 
-    def takeoff(self):
+    def takeoff(self, extra_height_cm=0):
         if not self.is_flying:
             self.drone.takeoff()
             self.is_flying = True
+            
+            # Si queremos que suba más después de despegar
+            if extra_height_cm > 0:
+                print(f"[HW] Subiendo {extra_height_cm} cm adicionales...")
+                # move_up acepta valores entre 20 y 500 cm
+                self.drone.move_up(extra_height_cm)
 
     def land(self):
         if self.is_flying:

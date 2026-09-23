@@ -44,7 +44,7 @@ def main():
             driver.land()
             break
         elif key == ord('t'):
-            driver.takeoff()
+            driver.takeoff(extra_height_cm=25)
         elif key == ord('l'):
             driver.land()
             
@@ -57,8 +57,10 @@ def main():
         
         if roll != 0 or pitch != 0:
             driver.set_velocity(roll, pitch, throttle=0, yaw=0)
-        elif driver.is_flying:
-            driver.set_velocity(0, 0, 0, 0)
+        else:
+            # Presiona barra espaciadora para frenar de golpe en el aire
+            if key == ord(' '): 
+                driver.set_velocity(0, 0, 0, 0)
 
     cv2.destroyAllWindows()
 

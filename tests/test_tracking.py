@@ -14,7 +14,7 @@ def main():
     print("--- TEST DE VUELO 1: SEGUIMIENTO X, Y (SIN DESCENSO) ---")
     
     driver = TelloDriver()
-    vision = VisionSystem(flip_code=0, marker_size_cm=10.0)
+    vision = VisionSystem(flip_code=1, marker_size_cm=10.0)
     hud = TelemetryHUD()
     navigator = Navigator() # Aquí viven tus PIDs
 
@@ -58,7 +58,7 @@ def main():
         # --- CONTROLES MANUALES ---
         key = cv2.waitKey(1) & 0xFF
         if key == ord('t'):
-            driver.takeoff()
+            driver.takeoff(extra_height_cm=20)
         elif key == ord('l') or key == ord('q'):
             driver.land()
             if key == ord('q'): break
